@@ -4,284 +4,280 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ================== МАЪЛУМОТ БАРОИ GOOGLE (SEO) ================== -->
+    <!-- ================== МАЪЛУМОТ БАРОИ GOOGLE (SEO) АЗ ФАЙЛИ ПЕШИНА ================== -->
     <title>SanjishBot - Санҷиши дониш тавассути Telegram</title>
     <meta name="description" content="SanjishBot - платформаи интерактивии таълимӣ барои омодагӣ ба имтиҳонҳо ва санҷиши дониш аз рӯи фанҳои гуногун дар Тоҷикистон. Ба боти мо дар Telegram пайваст шавед!">
     
-    <!-- ================== КОДИ ТАСДИҚИ GOOGLE ================== -->
+    <!-- ================== КОДИ ТАСДИҚИ GOOGLE АЗ ФАЙЛИ ПЕШИНА ================== -->
     <meta name="google-site-verification" content="14xJnd9_2gasKa1nmESZkP1H-SjSNGLOy3U4i5WIOQ4" />
-    
-    <!-- ================== FAVICON БАРОИ САЙТ ================== -->
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='15' fill='%232563eb'%3E%3C/rect%3E%3Ctext x='50%25' y='50%25' font-size='50' fill='%23ffffff' font-family='Arial, sans-serif' text-anchor='middle' dy='.3em'%3ESB%3C/text%3E%3C/svg%3E">
-    <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='15' fill='%232563eb'%3E%3C/rect%3E%3Ctext x='50%25' y='50%25' font-size='50' fill='%23ffffff' font-family='Arial, sans-serif' text-anchor='middle' dy='.3em'%3ESB%3C/text%3E%3C/svg%3E">
-    <!-- ========================================================== -->
 
-    <!-- Подключение Tailwind CSS -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Подключение шрифта Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Стили для основного текста и фона */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f9fc;
-            color: #333;
-        }
-
-        /* Фоновые узоры */
-        .bg-dots {
-            background-image: radial-gradient(#dce4f7 1px, transparent 1px);
-            background-size: 16px 16px;
-        }
-        .bg-plus {
-            background-image:
-                linear-gradient(to right, #e0e7ff 1px, transparent 1px),
-                linear-gradient(to bottom, #e0e7ff 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-
-        /* Стили для анимаций */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Анимация для телефона */
-        .phone-animation {
-            animation: float 4s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); }
+        .hover-lift { transition: all 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+        .card-shadow { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07); }
     </style>
 </head>
-<body class="overflow-x-hidden">
-
-    <!-- =========== Шапка сайта =========== -->
-    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <a href="#" class="text-2xl font-bold text-gray-800">🎓Sanjish<span class="text-blue-600">Bot</span></a>
-                <a href="https://t.me/SanjishTajBot" target="_blank" class="bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <img src="logo.jpg" alt="Логотип" class="w-10 h-10 rounded-lg">
+                    <span class="text-xl font-bold text-gray-900">Sanjish Bot</span>
+                </div>
+                <a href="https://t.me/SanjishTajBot" target="_blank" class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-full font-medium hover-lift">
                     Оғози кор
                 </a>
             </div>
         </div>
     </header>
 
-    <main>
-        <!-- =========== Главный экран (Hero) =========== -->
-        <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-dots">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-wrap items-center -mx-4">
-                    <!-- Левая колонка: Текст -->
-                    <div class="w-full lg:w-1/2 px-4 mb-12 lg:mb-0">
-                        <div class="text-center lg:text-left">
-                            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight fade-in-up">
-                                Дониши худро бо роҳи нав бисанҷ!
-                            </h1>
-                            <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 fade-in-up" style="transition-delay: 0.2s;">
-                                SanjishBot - ёрдамчии боэътимоди шумо барои омодагӣ ба имтиҳонҳо, бевосита дар Telegram.
-                            </p>
-                            <div class="fade-in-up" style="transition-delay: 0.4s;">
-                                <a href="https://t.me/SanjishTajBot" target="_blank" class="inline-block bg-blue-600 text-white font-bold text-lg px-8 py-4 rounded-xl hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg">
-                                    🚀 Ба бот пайваст шудан
-                                </a>
-                            </div>
-                        </div>
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                Дониши худро бисанҷ ва ба қуллаҳои нав бирас!
+            </h1>
+            <p class="text-xl lg:text-2xl mb-10 max-w-4xl mx-auto leading-relaxed opacity-90">
+                Sanjish Bot - ёрдамчии боэътимоди шумо барои омодагӣ ба имтиҳонҳо, санҷиши дониш ва рақобат бо дӯстон тавассути зеҳни сунъӣ.
+            </p>
+            <a href="https://t.me/SanjishTajBot" target="_blank" class="inline-flex items-center bg-white text-indigo-600 px-8 py-4 rounded-full text-lg font-semibold hover-lift shadow-lg">
+                🚀 Ба Бот пайваст шавед
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Имкониятҳои асосӣ</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Бо Sanjish Bot дониши худро такмил диҳед ва ба ҳадафҳои таълимии худ ноил шавед</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-2xl card-shadow hover-lift border border-gray-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
                     </div>
-                    <!-- Правая колонка: Телефон -->
-                    <div class="w-full lg:w-1/2 px-4">
-                         <div class="relative mx-auto max-w-sm phone-animation">
-                            <!-- Корпус телефона -->
-                            <div class="relative border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-2xl">
-                                <div class="w-[148px] h-[18px] bg-gray-800 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute"></div>
-                                <div class="h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[72px] rounded-l-lg"></div>
-                                <div class="h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
-                                <div class="h-[64px] w-[3px] bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
-                                <!-- Экран с чатом -->
-                                <div class="rounded-[2rem] overflow-hidden w-full h-full bg-white dark:bg-gray-100">
-                                   <div class="flex flex-col h-full p-4 space-y-4">
-                                       <div class="flex items-center space-x-2">
-                                           <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center font-bold text-white text-sm">SB</div>
-                                           <span class="font-bold">SanjishBot</span>
-                                       </div>
-                                       <div class="flex-grow space-y-3 overflow-y-auto">
-                                           <div class="p-3 bg-gray-200 rounded-lg rounded-bl-none max-w-xs">
-                                               Салом! Ман SanjishBot ҳастам.
-                                           </div>
-                                            <div class="p-3 bg-gray-200 rounded-lg rounded-bl-none max-w-xs">
-                                               Фанро интихоб кунед
-                                           </div>
-                                           <div class="flex justify-end">
-                                               <div class="p-3 bg-blue-500 text-white rounded-lg rounded-br-none max-w-xs">
-                                                  📘 Математика
-                                               </div>
-                                           </div>
-                                            <div class="flex justify-end">
-                                               <div class="p-3 bg-blue-500 text-white rounded-lg rounded-br-none max-w-xs">
-                                                  🧪 Химия
-                                               </div>
-                                           </div>
-                                            <div class="flex justify-end">
-                                               <div class="p-3 bg-blue-500 text-white rounded-lg rounded-br-none max-w-xs">
-                                                  🌍 География
-                                               </div>
-                                           </div>
-                                            <div class="p-3 bg-gray-200 rounded-lg rounded-bl-none max-w-xs">
-                                               Математикаро интихоб кардам
-                                           </div>
-                                           <div class="p-3 bg-gray-200 rounded-lg rounded-bl-none max-w-xs">
-                                                Хуб! Биёед тестро оғоз кунем. Шумо тайёред?
-                                           </div>
-                                       </div>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Супоридани Тест</h3>
+                    <p class="text-gray-600 leading-relaxed">Аз рӯи фанҳои гуногун тест супорида, сатҳи дониши худро санҷед ва натиҷаҳои худро пайгирӣ намоед.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-2xl card-shadow hover-lift border border-gray-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
                     </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Ёрдамчии AI (PRO)</h3>
+                    <p class="text-gray-600 leading-relaxed">Ба саволҳои мураккаби худ аз зеҳни сунъии пешрафтаи Gemini ҷавобҳои фаврӣ ва дақиқ гиред.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-2xl card-shadow hover-lift border border-gray-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Дуэл бо Дӯст (PRO)</h3>
+                    <p class="text-gray-600 leading-relaxed">Дӯстони худро ба мусобиқаи дониш даъват карда, дар вақти воқеӣ рақобат кунед ва ғолибро муайян созед.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white p-8 rounded-2xl card-shadow hover-lift border border-gray-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Омори Муфассал</h3>
+                    <p class="text-gray-600 leading-relaxed">Пешрафти худро назорат кунед, ба ҷадвали пешсафон бароед ва хатогиҳои худро барои омӯзиши беҳтар таҳлил намоед (PRO).</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- =========== Секция "Почему SanjishBot?" =========== -->
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-gray-900 mb-4 fade-in-up">Чаро SanjishBot?</h2>
+    <!-- Free vs PRO Comparison -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Интихоби худро кунед</h2>
+                <p class="text-xl text-gray-600">Аз версияи ройгон оғоз карда, ба PRO такмил диҳед</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Free Version -->
+                <div class="bg-white p-8 rounded-2xl card-shadow border border-gray-200">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Ройгон</h3>
+                        <p class="text-gray-600">Барои оғози кор</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Супоридани тестҳо</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Дидани натиҷаҳои худ</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Иштирок дар рейтинг</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-red-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-gray-400">Ёрдамчии AI</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-red-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-gray-400">Дуэл бо Дӯст</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-red-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-gray-400">Таҳлили хатогиҳо</span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Карточка 1 -->
-                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center fade-in-up" style="transition-delay: 0.1s;">
-                        <div class="mx-auto mb-6 w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center">
-                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Тестҳои гуногун</h3>
-                        <p class="text-gray-600">Тестҳои гуногун аз фанҳои мухталиф барои санҷиши дониши шумо.</p>
+
+                <!-- PRO Version -->
+                <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-8 rounded-2xl text-white relative overflow-hidden">
+                    <div class="absolute top-4 right-4 bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm font-semibold">
+                        Машҳур
                     </div>
-                    <!-- Карточка 2 -->
-                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center fade-in-up" style="transition-delay: 0.3s;">
-                        <div class="mx-auto mb-6 w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
-                             <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Натиҷагирии фаврӣ</h3>
-                        <p class="text-gray-600">Натиҷаҳои тестро фавран дастрас кунед ва донишатонро беҳтар созед.</p>
+                    
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold mb-2">PRO</h3>
+                        <p class="opacity-90">Барои натиҷаҳои олӣ</p>
                     </div>
-                    <!-- Карточка 3 -->
-                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center fade-in-up" style="transition-delay: 0.5s;">
-                        <div class="mx-auto mb-6 w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center">
-                            <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Дастрас 24/7</h3>
-                        <p class="text-gray-600">Дар ҳар вақт ва дар ҳар ҷой, бот барои кӯмак ба шумо омода аст.</p>
-                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-300 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Ҳамаи имкониятҳои Ройгон</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-300 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Ёрдамчии AI (Бемаҳдуд)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-300 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Дуэл бо Дӯст</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-300 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Таҳлили муфассали хатогиҳо</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="https://t.me/SanjishTajBot" target="_blank" class="block w-full bg-white text-indigo-600 text-center py-3 rounded-xl font-semibold hover-lift">
+                        PRO-ро фаъол кардан
+                    </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- =========== Секция "Список предметов" =========== -->
-        <section class="py-20 bg-plus">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-gray-900 mb-4 fade-in-up">Рӯйхати фанҳои мо</h2>
+    <!-- Screenshots Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Намунаи интерфейс</h2>
+                <p class="text-xl text-gray-600">Бинед, ки Sanjish Bot чӣ гуна кор мекунад</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-gray-100 rounded-3xl p-4 mb-6 hover-lift">
+                        <img src="Test.jpg" alt="Интерфейси интихоби тест" class="w-full rounded-2xl shadow-lg">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Интихоби Фанҳо</h3>
+                    <p class="text-gray-600">Тестҳои гуногунро ба осонӣ интихоб кунед</p>
                 </div>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                    <!-- Предметы с иконками -->
-                    <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 font-semibold text-gray-700 cursor-pointer transition-all transform hover:shadow-xl hover:-translate-y-1 hover:border-blue-500 fade-in-up flex flex-col items-center justify-center space-y-2" style="transition-delay: 0.1s;">
-                        <span class="text-3xl">📚</span>
-                        <span>Математика</span>
+                
+                <div class="text-center">
+                    <div class="bg-gray-100 rounded-3xl p-4 mb-6 hover-lift">
+                        <img src="Ai.jpg" alt="Ёрдамчии AI дар бот" class="w-full rounded-2xl shadow-lg">
                     </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 font-semibold text-gray-700 cursor-pointer transition-all transform hover:shadow-xl hover:-translate-y-1 hover:border-blue-500 fade-in-up flex flex-col items-center justify-center space-y-2" style="transition-delay: 0.2s;">
-                        <span class="text-3xl">🧪</span>
-                        <span>Химия</span>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Ёрдамчии AI</h3>
+                    <p class="text-gray-600">Ҷавобҳои фаврӣ ба саволҳои шумо</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-gray-100 rounded-3xl p-4 mb-6 hover-lift">
+                        <img src="Natija.jpg" alt="Натиҷаҳо ва таҳлили хатогиҳо" class="w-full rounded-2xl shadow-lg">
                     </div>
-                     <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 font-semibold text-gray-700 cursor-pointer transition-all transform hover:shadow-xl hover:-translate-y-1 hover:border-blue-500 fade-in-up flex flex-col items-center justify-center space-y-2" style="transition-delay: 0.3s;">
-                        <span class="text-3xl">⚛️</span>
-                        <span>Физика</span>
-                    </div>
-                     <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 font-semibold text-gray-700 cursor-pointer transition-all transform hover:shadow-xl hover:-translate-y-1 hover:border-blue-500 fade-in-up flex flex-col items-center justify-center space-y-2" style="transition-delay: 0.4s;">
-                        <span class="text-3xl">🌍</span>
-                        <span>География</span>
-                    </div>
-                     <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 font-semibold text-gray-700 cursor-pointer transition-all transform hover:shadow-xl hover:-translate-y-1 hover:border-blue-500 fade-in-up flex flex-col items-center justify-center space-y-2" style="transition-delay: 0.5s;">
-                        <span class="text-3xl">🧬</span>
-                        <span>Биология</span>
-                    </div>
-                     <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 font-semibold text-gray-700 cursor-pointer transition-all transform hover:shadow-xl hover:-translate-y-1 hover:border-blue-500 fade-in-up flex flex-col items-center justify-center space-y-2" style="transition-delay: 0.6s;">
-                        <span class="text-3xl">📜</span>
-                        <span>Таърих</span>
-                    </div>
-                     <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 font-semibold text-gray-700 cursor-pointer transition-all transform hover:shadow-xl hover:-translate-y-1 hover:border-blue-500 fade-in-up flex flex-col items-center justify-center space-y-2" style="transition-delay: 0.7s;">
-                        <span class="text-3xl">📑</span>
-                        <span>Забони тоҷикӣ</span>
-                    </div>
-                     <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 font-semibold text-gray-700 cursor-pointer transition-all transform hover:shadow-xl hover:-translate-y-1 hover:border-blue-500 fade-in-up flex flex-col items-center justify-center space-y-2" style="transition-delay: 0.8s;">
-                        <span class="text-3xl">🌐</span>
-                        <span>Забони англисӣ</span>
-                    </div>
-                     <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 font-semibold text-gray-700 cursor-pointer transition-all transform hover:shadow-xl hover:-translate-y-1 hover:border-blue-500 fade-in-up flex flex-col items-center justify-center space-y-2" style="transition-delay: 0.9s;">
-                        <span class="text-3xl">💻</span>
-                        <span>Информатика</span>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 font-semibold text-gray-700 cursor-pointer transition-all transform hover:shadow-xl hover:-translate-y-1 hover:border-blue-500 fade-in-up flex flex-col items-center justify-center space-y-2" style="transition-delay: 1s;">
-                        <span class="text-3xl">📖</span>
-                        <span>Адабиёт</span>
-                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Таҳлили Хатогиҳо</h3>
+                    <p class="text-gray-600">Натиҷаҳоро дида, дониши худро мустаҳкам кунед</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- =========== Секция "Призыв к действию" (CTA) =========== -->
-        <section class="bg-blue-600">
-             <div class="container mx-auto px-6 py-20 text-center">
-                 <h2 class="text-4xl font-bold text-white mb-6 fade-in-up">Омодаед? Ҳозир оғоз кунед!</h2>
-                 <div class="fade-in-up" style="transition-delay: 0.2s;">
-                     <a href="https://t.me/SanjishTajBot" target="_blank" class="inline-block bg-white text-blue-600 font-bold text-lg px-8 py-4 rounded-xl hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
-                        🚀 Ба бот пайваст шудан
-                     </a>
-                 </div>
-             </div>
-        </section>
+    <!-- Final CTA Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-6">Ҳозир оғоз кунед!</h2>
+            <p class="text-xl mb-10 opacity-90">Ба ҳазорон донишҷӯёни Тоҷикистон ҳамроҳ шавед ва дониши худро такмил диҳед</p>
+            <a href="https://t.me/SanjishTajBot" target="_blank" class="inline-flex items-center bg-white text-indigo-600 px-8 py-4 rounded-full text-lg font-semibold hover-lift shadow-lg">
+                🚀 Ба Бот пайваст шавед
+            </a>
+        </div>
+    </section>
 
-    </main>
-
-    <!-- =========== Подвал сайта =========== -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2025 SanjishBot. Ҳамаи ҳуқуқҳо маҳфузанд.</p>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-4">
+                    <img src="logo.jpg" alt="Логотип" class="w-10 h-10 rounded-lg">
+                    <span class="text-xl font-bold">Sanjish Bot</span>
+                </div>
+                <p class="text-gray-400 mb-6">Ёрдамчии боэътимоди шумо дар роҳи илм</p>
+                <a href="https://t.me/SanjishTajBot" class="text-indigo-400 hover:text-indigo-300 font-medium">
+                    @SanjishTajBot
+                </a>
+            </div>
         </div>
     </footer>
-
-    <!-- Скрипт для анимаций -->
-    <script>
-        // Скрипт для анимации появления элементов при прокрутке
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1 // Элемент считается видимым при появлении на 10%
-        });
-
-        // Наблюдаем за всеми элементами с классом fade-in-up
-        const elementsToAnimate = document.querySelectorAll('.fade-in-up');
-        elementsToAnimate.forEach(el => observer.observe(el));
-    </script>
-
 </body>
 </html>
