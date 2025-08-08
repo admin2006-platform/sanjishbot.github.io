@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ================== МАЪЛУМОТ БАРОИ GOOGLE (SEO) АЗ ФАЙЛИ ПЕШИНА ================== -->
+    <!-- ================== МАЪЛУМОТ БАРОИ GOOGLE (SEO) ================== -->
     <title>SanjishBot - Санҷиши дониш тавассути Telegram</title>
     <meta name="description" content="SanjishBot - платформаи интерактивии таълимӣ барои омодагӣ ба имтиҳонҳо ва санҷиши дониш аз рӯи фанҳои гуногун дар Тоҷикистон. Ба боти мо дар Telegram пайваст шавед!">
     
-    <!-- ================== КОДИ ТАСДИҚИ GOOGLE АЗ ФАЙЛИ ПЕШИНА ================== -->
+    <!-- ================== КОДИ ТАСДИҚИ GOOGLE ================== -->
     <meta name="google-site-verification" content="14xJnd9_2gasKa1nmESZkP1H-SjSNGLOy3U4i5WIOQ4" />
 
     <!-- Favicon -->
@@ -279,5 +279,42 @@
             </div>
         </div>
     </footer>
+
+    <!-- ================== SCRIPT-И НАВ БАРОИ ДАРХОСТИ БЕХАТАРИ API ================== -->
+    <script>
+        // Ин функсия маълумотро аз Google Search Console тавассути функсияи серверии мо дархост мекунад
+        async function getSearchConsoleData() {
+            // URL-и сайте, ки мехоҳед маълумоташро гиред
+            // Инро бо URL-и воқеии сайти худ иваз кунед
+            const mySiteUrl = 'https://sanjishbot.com'; 
+
+            try {
+                // Мо ба функсияи серверии худ муроҷиат мекунем, на мустақиман ба Google
+                // Суроғаи функсия: /.netlify/functions/google-api
+                const response = await fetch(`/.netlify/functions/google-api?siteUrl=${encodeURIComponent(mySiteUrl)}`);
+                
+                const data = await response.json();
+
+                if (response.ok) {
+                    console.log('Маълумот аз Google бомуваффақият гирифта шуд:', data);
+                    // Дар ин ҷо шумо метавонед бо маълумоти гирифташуда кор кунед,
+                    // масалан, онро дар саҳифа нишон диҳед.
+                } else {
+                    console.error('Хатогӣ ҳангоми гирифтани маълумот:', data.error);
+                }
+
+            } catch (error) {
+                console.error('Хатогии умумӣ дар тарафи клиент:', error);
+            }
+        }
+
+        // Шумо метавонед ин функсияро ҳангоми зарурат даъват кунед.
+        // Масалан, баъди пурра бор шудани саҳифа:
+        // document.addEventListener('DOMContentLoaded', getSearchConsoleData);
+        
+        // Ё ҳангоми пахш кардани ягон тугма:
+        // document.getElementById('myButton').addEventListener('click', getSearchConsoleData);
+
+    </script>
 </body>
 </html>
